@@ -51,11 +51,11 @@ export class LoginComponent implements OnInit {
         password: this.form.value.password,
       })
       .then((res) => {
-        console.log('Login Response:', res);
+        // console.log('Login Response:', res);
         this.router.navigateByUrl('/');
       })
-      .catch((error) => {
-        console.error('Login Error:', error);
-      });
+      // .catch((error) => {
+      //   console.error('Login Error:', error);
+      // });
   }
 }
