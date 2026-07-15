@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Widget_gameModule } from '@shared/widgets/widget_game/widget_game.module';
+import { AuthService } from '@api/auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +9,13 @@ import { Widget_gameModule } from '@shared/widgets/widget_game/widget_game.modul
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

@@ -51,14 +51,14 @@ export class AuthService extends AbstractApiService<any> {
 
 
   async post_login(
-    data: { username: string; password: string },
+    data: { phone: string; password: string },
     param?: any,
   ) {
 
     return Entity_User.load(async () => {
 
       const params = param ? param : {};
-      const res = await this.post(data, '/login', params);
+      const res = await this.post(data, '/auth/login', params);
       if (res) {
 
 

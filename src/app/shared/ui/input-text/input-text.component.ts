@@ -24,7 +24,7 @@ import { AlertErrorInputComponent } from '@shared/widgets/alert-error-input/aler
 export class InputTextComponent implements ControlValueAccessor, OnInit {
 
   @Input() control!: FormControl | any;
-  placeholder = input('Enter your email'); //default
+  placeholder = input('Enter'); //default
   label = input('label'); //default
 
   value: any;

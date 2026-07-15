@@ -22,12 +22,12 @@ export const loginGuard: CanActivateFn = (route, state) => {
           window.location.href = redirect + '?token=' + token.token;
         }
 
-        router.navigateByUrl('/home');
-        // helper.showPopup(
-        //   'error',
-        //   'Maaf',
-        //   'Mohon untuk logout akun terlebih dahulu di browser ini!'
-        // );
+        router.navigateByUrl('/');
+        helper.showPopup(
+          'error',
+          'Maaf',
+          'Mohon untuk logout akun terlebih dahulu di browser ini!'
+        );
         return false;
       } else {
         return true;
