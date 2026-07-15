@@ -60,13 +60,9 @@ export class AuthService extends AbstractApiService<any> {
       const params = param ? param : {};
       const res = await this.post(data, '/auth/login', params);
       if (res) {
-
-
-        if (res?.data?.is_internal) {
-          this.setLogin(true);
-          this.helper.setStorage('users', res?.data?.user);
-          this.helper.setStorage(environment.tokenName, { token: res?.data?.token, expired: res?.data?.expiresAt });
-        }
+        this.setLogin(true);
+        this.helper.setStorage('users', res?.data?.user);
+        this.helper.setStorage(environment.tokenName, { token: res?.data?.token, expired: res?.data?.expiresAt });
       }
       logger.log('Logged', res?.data?.user);
       return res?.data;

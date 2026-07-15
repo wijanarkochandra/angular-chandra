@@ -10,6 +10,7 @@ import { emailPatternValidator } from '@shared/utils/validator_pattern';
 import { CommonModule } from '@angular/common';
 import { InputTextComponent } from '@shared/ui/input-text/input-text.component';
 import { AuthService } from '@api/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -50,6 +52,7 @@ export class LoginComponent implements OnInit {
       })
       .then((res) => {
         console.log('Login Response:', res);
+        this.router.navigateByUrl('/');
       })
       .catch((error) => {
         console.error('Login Error:', error);
