@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <h2 class="text-lg font-semibold">Jhon Doe</h2>
+  </td>
+  <td>
+    <p class="text-gray-600">08123456789</p>
+  </td>
+  <td>
+    <p class="text-gray-600">email@example.com</p>
+  </td>
+  <td>
+    <div class="flex gap-2">
+      <app-button (click)="toggleFavorite()" variant="primary">
+        <i class="pi pi-star"></i>
+      </app-button>
+      <app-button (click)="deleteContact()" variant="danger">
+        <i class="pi pi-times"></i>
+      </app-button>
+    </div>
+  </td>
+</tr>

@@ -8,9 +8,19 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'dashboard',
+        path: '',
         canActivate: [authGuard],
-        loadComponent: () => import('./PAGES/dashboard/dashboard.component').then(m => m.DashboardComponent)
+        loadComponent: () => import('./shared/layout/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
+        children: [
+            {
+                path: 'dashboard',
+                loadComponent: () => import('./PAGES/dashboard/dashboard.component').then(m => m.DashboardComponent)
+            },
+            {
+                path: 'daftar-kontak',
+                loadComponent: () => import('./PAGES/daftar-kontak/daftar-kontak.component').then(m => m.DaftarKontakComponent)
+            },
+        ]
     },
 
     //MARK: AUTHENTICATION
