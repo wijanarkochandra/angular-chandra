@@ -4,8 +4,13 @@ import { authGuard } from '@core/guards/auth.guard';
 export const routes: Routes = [
     {
         path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+    },
+    {
+        path: 'dashboard',
         canActivate: [authGuard],
-        loadComponent: () => import('./PAGES/home/home.component').then(m => m.HomeComponent)
+        loadComponent: () => import('./PAGES/dashboard/dashboard.component').then(m => m.DashboardComponent)
     },
 
     //MARK: AUTHENTICATION

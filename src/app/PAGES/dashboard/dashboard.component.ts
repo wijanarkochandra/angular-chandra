@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Widget_gameModule } from '@shared/widgets/widget_game/widget_game.module';
 import { AuthService } from '@api/auth/auth.service';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   imports: [Widget_gameModule],
 })
-export class HomeComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
