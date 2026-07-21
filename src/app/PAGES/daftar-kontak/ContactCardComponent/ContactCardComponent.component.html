@@ -1,25 +1,35 @@
-<tr>
-  <td>
-    <h2 class="text-lg font-semibold">{{ contact.name }}</h2>
-  </td>
-  <td>
-    <p class="text-gray-600">{{ contact.phone }}</p>
-  </td>
-  <td>
-    <p class="text-gray-600">{{ contact.email }}</p>
-  </td>
-  <td>
-    <div class="flex gap-2">
-      <app-button (click)="onFavorite.emit(contact.id)" variant="primary">
-        @if (contact.isFavorite) {
-        <i class="pi pi-star-fill"></i>
-        }@else {
-        <i class="pi pi-star"></i>
-        }
-      </app-button>
-      <app-button (click)="onDelete.emit(contact.id)" variant="danger">
-        <i class="pi pi-times"></i>
-      </app-button>
-    </div>
-  </td>
-</tr>
+@if (contact.phone !== 0) {
+  <tr>
+    <td>
+      <h2 class="text-lg font-semibold">{{ contact.name }}</h2>
+    </td>
+    <td>
+      <p class="text-gray-600">{{ contact.phone }}</p>
+    </td>
+    <td>
+      <p class="text-gray-600">{{ contact.email }}</p>
+    </td>
+    <td>
+      <div class="flex gap-2">
+        <app-button (click)="onFavorite.emit(contact.id)" variant="primary">
+          @if (contact.isFavorite) {
+          <i class="pi pi-star-fill"></i>
+          }@else {
+          <i class="pi pi-star"></i>
+          }
+        </app-button>
+        <app-button (click)="onDelete.emit(contact.id)" variant="danger">
+          <i class="pi pi-times"></i>
+        </app-button>
+      </div>
+    </td>
+  </tr>
+}@else {
+  <tr>
+    <td colspan="4">
+      <div class="text-center">
+        Tidak ada data
+      </div>
+    </td>
+  </tr>
+}
