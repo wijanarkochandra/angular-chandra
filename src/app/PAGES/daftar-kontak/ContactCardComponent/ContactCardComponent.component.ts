@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from "@shared/ui/button/button.component";
 
 @Component({
@@ -9,17 +9,20 @@ import { ButtonComponent } from "@shared/ui/button/button.component";
   host: { style: 'display: contents' }
 })
 export class ContactCardComponentComponent implements OnInit {
-  @Input() class = '';
+  @Input() contact = {
+    id: '',
+    nama: '',
+    email: '',
+    phone: 0,
+    isFavorite: false,
+    createdAt: ''
+  };
+  @Output() onFavorite = new EventEmitter<string>();
+  @Output() onDelete = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  toggleFavorite() {
-  }
-
-  deleteContact() {
   }
 
 }

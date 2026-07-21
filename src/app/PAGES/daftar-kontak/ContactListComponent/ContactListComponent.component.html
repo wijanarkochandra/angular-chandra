@@ -1,1 +1,7 @@
-<app-ContactCardComponent></app-ContactCardComponent>
+
+@for (contact of contacts; track $index) {
+  <app-ContactCardComponent
+  [contact]="contact"
+  (onDelete) = "onDelete"
+  ></app-ContactCardComponent>
+}

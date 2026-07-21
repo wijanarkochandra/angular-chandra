@@ -10,10 +10,10 @@
   </td>
   <td>
     <div class="flex gap-2">
-      <app-button (click)="toggleFavorite()" variant="primary">
+      <app-button (click)="onFavorite.emit(contact.id)" variant="primary">
         <i class="pi pi-star"></i>
       </app-button>
-      <app-button (click)="deleteContact()" variant="danger">
+      <app-button (click)="onDelete.emit(contact.id)" variant="danger">
         <i class="pi pi-times"></i>
       </app-button>
     </div>
