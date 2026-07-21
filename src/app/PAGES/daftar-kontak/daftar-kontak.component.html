@@ -1,7 +1,7 @@
 <div class="p-8">
   <div class="flex items-center justify-between mb-6">
     <h1 class="text-2xl font-semibold">Daftar Kontak</h1>
-    <app-button (click)="addContact()" variant="primary">
+    <app-button (click)="toggleForm()" variant="primary">
       Tambah Kontak
     </app-button>
   </div>
@@ -24,4 +24,28 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div class="px-5 py-10 max-w-7xl mx-auto">
+
+  @if (showForm) {
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mb-5 rounded-2xl bg-white p-4 shadow border border-solid border-primary">
+      <div class="flex flex-col gap-3">
+        <input-text formControlName="name" [control]="form.get('name')" [label]="'Nama'" placeholder="Masukkan Nama"></input-text>
+        <input-text formControlName="email" [control]="form.get('email')" [label]="'Email'" placeholder="Masukkan Email"></input-text>
+        <input-text formControlName="phone" [control]="form.get('phone')" [label]="'Nomor Telepon'" placeholder="Masukkan Nomor Telepon"></input-text>
+
+        <div class="flex justify-end gap-2 mt-4">
+          <app-button variant="secondary" (click)="showForm = false">
+            Batal
+          </app-button>
+
+          <app-button type="submit">
+            Simpan
+          </app-button>
+        </div>
+      </div>
+    </form>
+  }
+
 </div>
