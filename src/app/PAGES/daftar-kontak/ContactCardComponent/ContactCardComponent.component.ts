@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Contact_m } from '@core/models/entities/contact.entity';
 import { ButtonComponent } from "@shared/ui/button/button.component";
 
 @Component({
@@ -9,9 +10,9 @@ import { ButtonComponent } from "@shared/ui/button/button.component";
   host: { style: 'display: contents' }
 })
 export class ContactCardComponentComponent implements OnInit {
-  @Input() contact = {
+  @Input() contact: Contact_m = {
     id: '',
-    nama: '',
+    name: '',
     email: '',
     phone: 0,
     isFavorite: false,

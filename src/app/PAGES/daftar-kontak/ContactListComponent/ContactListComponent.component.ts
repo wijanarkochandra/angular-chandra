@@ -13,7 +13,7 @@ export class ContactListComponentComponent implements OnInit {
   @Input() contacts = [
     {
       id: '',
-      nama: '',
+      name: '',
       email: '',
       phone: 0,
       isFavorite: false,
